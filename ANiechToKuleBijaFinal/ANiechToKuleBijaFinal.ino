@@ -1,3 +1,5 @@
+// Dobrosław Cieślewicz, Grzegorz Maślak, Michał Kolenderski 2019
+
 // Steppers
 //
 #define X_STEP_PIN         54
