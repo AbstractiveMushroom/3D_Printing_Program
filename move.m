@@ -1,8 +1,10 @@
+%% Dobros≈Çaw Cie≈õlewicz, Grzegorz Ma≈õlak, Micha≈Ç Kolenderski 2019
+
 function [] = move(s,s1,s2,s3,repeat,pauza)
 %[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3)
-%[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3, iloúÊ powtÛrzeÒ)
+%[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3, ilo≈ì√¶ powt√≥rze√±)
 
-if nargin < 5 || isempty(repeat) %okreúlenie liczby argumentÛw wejúciowych
+if nargin < 5 || isempty(repeat) %okre≈ìlenie liczby argument√≥w wej≈ìciowych
     repeat=1;
 end
 
@@ -20,7 +22,7 @@ for i=1:repeat
 
     try
         fprintf(s, sprintf('s1 %d s2 %d s3 %d',s1,s2,s3));
-        if (pauza) % to wywo≥uje siÍ gdy uøywamy move bezpoúrednio
+        if (pauza) % to wywo¬≥uje si√™ gdy u¬øywamy move bezpo≈ìrednio
             pause(5);
         end
       
@@ -28,7 +30,7 @@ for i=1:repeat
         fprintf('Error');
     end
 
-    if ~(pauza) % to wykonuje siÍ gdy funkcja circle wywo≥uje move
+    if ~(pauza) % to wykonuje si√™ gdy funkcja circle wywo¬≥uje move
         while(s.BytesAvailable == 0)
         end
 
