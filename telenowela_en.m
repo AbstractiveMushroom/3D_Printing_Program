@@ -1,29 +1,32 @@
+%% DobrosÅ‚aw CieÅ›lewicz, Grzegorz MaÅ›lak, MichaÅ‚ Kolenderski 2019
+
+
 if ~(exist('s','var')) %sprawdzenie statusu portu
 %     s = serial('/dev/ttyUSB0'); % LINUX
 s = serial('COM9'); % WINDOWS
     s.BaudRate = 115200;
 else
-    if s.Status(1) == 'o' %ewentualne zamkniêcie portu
+    if s.Status(1) == 'o' %ewentualne zamkniÄ™cie portu
         fclose(s);
     end
 end
 
-move(s,1000,1000,1000,3,1); %ruch w górê: move(serial,s1,s2,s3,repeat,pauza)
-% repeat - ile razy ma powtórzyæ move (counter in for loop)
-% pauza - boolean - czy wykonaæ funkcjê pause*
-% *nale¿y u¿yæ pauza = 1 kiedy u¿ywasz bezpoœrednio move
-% natomiast circle wywo³uje to z wartoœci¹ pauza = 0; 
+move(s,1000,1000,1000,3,1); %ruch w gÃ³rÄ™: move(serial,s1,s2,s3,repeat,pauza)
+% repeat - ile razy ma powtÃ³rzyÄ‡ move (counter in for loop)
+% pauza - boolean - czy wykonaÄ‡ funkcjÄ™ pause*
+% *naleÅ¼y uÅ¼yÄ‡ pauza = 1 kiedy uÅ¼ywasz bezpoÅ›rednio move
+% natomiast circle wywoÅ‚uje to z wartoÅ›ciÄ… pauza = 0; 
 
-% czas trwania move: 5 seconds - powinno byæ dostosowane do iloœci kroków
-% oraz ustawione w Arduino prêdkoœci
+% czas trwania move: 5 seconds - powinno byÄ‡ dostosowane do iloÅ›ci krokÃ³w
+% oraz ustawione w Arduino prÄ™dkoÅ›ci
 
-% przy zamkniêtym porcie szeregowym jest on otwierany z 1 sekundow¹ pauz¹
-move(s,-4000,-4000,-4000,1,1); %ruch w dó³
+% przy zamkniÄ™tym porcie szeregowym jest on otwierany z 1 sekundowÄ… pauzÄ…
+move(s,-4000,-4000,-4000,1,1); %ruch w dÃ³Å‚
 
-% rysowanie kó³
-circle(s,360,200); %wycinek ko³a o zadanym k¹cie - przeciwnie do wskazówek zegara
-circle(s,-360,200); % zgodnie ze wskazówkami zegara
+% rysowanie kÃ³Å‚
+circle(s,360,200); %wycinek koÅ‚a o zadanym kÄ…cie - przeciwnie do wskazÃ³wek zegara
+circle(s,-360,200); % zgodnie ze wskazÃ³wkami zegara
 
-if s.Status(1) == 'o' %zamkniêcie portu po zakoñczeniu operacji
+if s.Status(1) == 'o' %zamkniÄ™cie portu po zakoÅ„czeniu operacji
     fclose(s);
 end
