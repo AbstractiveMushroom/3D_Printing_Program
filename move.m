@@ -2,9 +2,9 @@
 
 function [] = move(s,s1,s2,s3,repeat,pauza)
 %[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3)
-%[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3, iloœæ powtórzeñ)
+%[]=move(port szeregowy, kroki silnik 1, kroki silnik 2, kroki silnik 3, ilość powtórzeń)
 
-if nargin < 5 || isempty(repeat) %okreœlenie liczby argumentów wejœciowych
+if nargin < 5 || isempty(repeat) %określenie liczby argumentów wejściowych
     repeat=1;
 end
 
@@ -22,7 +22,7 @@ for i=1:repeat
 
     try
         fprintf(s, sprintf('s1 %d s2 %d s3 %d',s1,s2,s3));
-        if (pauza) % to wywo³uje siê gdy u¿ywamy move bezpoœrednio
+        if (pauza) % to wywołuje się gdy używamy move bezpośrednio
             pause(5);
         end
       
@@ -30,7 +30,7 @@ for i=1:repeat
         fprintf('Error');
     end
 
-    if ~(pauza) % to wykonuje siê gdy funkcja circle wywo³uje move
+    if ~(pauza) % to wykonuje się gdy funkcja circle wywołuje move
         while(s.BytesAvailable == 0)
         end
 
