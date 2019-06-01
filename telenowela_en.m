@@ -17,7 +17,7 @@ move(s,1000,1000,1000,3,1); %ruch w górę: move(serial,s1,s2,s3,repeat,pauza)
 % *należy użyć pauza = 1 kiedy używasz bezpośrednio move
 % natomiast circle wywołuje to z wartością pauza = 0; 
 
-% czas trwania move: 5 seconds - powinno być dostosowane do ilości kroków
+% czas trwania move: 5 sekund - powinno być dostosowane do ilości kroków
 % oraz ustawione w Arduino prędkości
 
 % przy zamkniętym porcie szeregowym jest on otwierany z 1 sekundową pauzą
